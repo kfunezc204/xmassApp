@@ -1,0 +1,208 @@
+:root {
+  --bg: #16240fff;
+  --card-front: #d42629;
+  --card-back: #f6d8d6;
+  --muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, Arial;
+  background: #001409ff;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 10px;
+}
+#info img {
+  width: 250px;
+}
+
+.container {
+  width: 980px;
+  max-width: 100%;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: clamp(18px, 4vw, 24px);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 20px auto 12px;
+  max-width: 760px;
+}
+
+.card.winner {
+  border: 4px solid red;
+  border-radius: 16px;
+  box-shadow: 0 0 20px red;
+}
+
+.card {
+  width: 100%;
+  min-height: clamp(200px, 25vw, 300px);
+  position: relative;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-back,
+.card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-back img,
+.card-front img {
+  height: 100%; /* La imagen llena toda la altura de la carta */
+  width: auto; /* El ancho se ajusta proporcionalmente */
+  object-fit: contain; /* Mantiene la proporción y no recorta */
+  border-radius: 12px;
+}
+
+.card-back {
+  background: var(--card-front);
+  color: #fff;
+}
+.card-front {
+  background: var(--card-back);
+  transform: rotateY(180deg);
+}
+
+.card.active .card-inner {
+  transform: rotateY(180deg);
+}
+.card.dim {
+  opacity: 0.55;
+}
+
+.controls {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+button {
+  background: var(--card-front);
+  color: #fff;
+  border: none;
+  padding: 12px 92px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+button.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 99;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-card {
+  background: #fff;
+  color: #022;
+  padding: 20px;
+  border-radius: 14px;
+  max-width: 420px;
+  width: 92%;
+  text-align: center;
+}
+
+.prize-box {
+  font-weight: 800;
+  padding: 14px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #fef3c7, #fde68a);
+  color: #4a2c00;
+  margin: 12px 0;
+}
+
+/* Snow */
+#snow {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  color: white;
+  font-size: 12px;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(110vh);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .board {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 500px;
+    gap: 10px;
+  }
+  .card {
+    min-height: clamp(120px, 30vw, 220px);
+  }
+}
+
+@media (max-width: 480px) {
+  .board {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .card {
+    min-height: clamp(120px, 38vw, 180px);
+  }
+}

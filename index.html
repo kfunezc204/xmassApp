@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>XmassApp para Preciosas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="info">
+        <img src="/img/logo.png" alt="Logo Preciosas" />
+        <h1>Participa por compras de L.1,500 en adelante</h1>
+        <p class="info">Haz clic en <strong>Girar</strong> para comenzar.</p>
+      </div>
+      <div class="board" id="board">
+        <!-- Cada carta usa img para back/front -->
+        <div class="card" data-index="0">
+          <div class="card-inner">
+            <div class="card-back"><img src="/img/p1.png" alt="?" /></div>
+            <div class="card-front">
+              <img src="/img/premio1.png" alt="Premio 1" />
+            </div>
+          </div>
+        </div>
+        <div class="card" data-index="1">
+          <div class="card-inner">
+            <div class="card-back"><img src="/img/p2.png" alt="?" /></div>
+            <div class="card-front">
+              <img src="/img/premio2.png" alt="Premio 2" />
+            </div>
+          </div>
+        </div>
+        <div class="card" data-index="2">
+          <div class="card-inner">
+            <div class="card-back"><img src="/img/p3.png" alt="?" /></div>
+            <div class="card-front">
+              <img src="/img/premio3.png" alt="Premio 3" />
+            </div>
+          </div>
+        </div>
+        <div class="card" data-index="3">
+          <div class="card-inner">
+            <div class="card-back"><img src="/img/p4.png" alt="?" /></div>
+            <div class="card-front">
+              <img src="/img/premio4.png" alt="Premio 4" />
+            </div>
+          </div>
+        </div>
+        <div class="card" data-index="4">
+          <div class="card-inner">
+            <div class="card-back"><img src="/img/p5.png" alt="?" /></div>
+            <div class="card-front">
+              <img src="/img/premio5.png" alt="Premio 5" />
+            </div>
+          </div>
+        </div>
+        <div class="card" data-index="5">
+          <div class="card-inner">
+            <div class="card-back"><img src="/img/p6.png" alt="?" /></div>
+            <div class="card-front">
+              <img src="/img/consolacion.png" alt="Gracias por participar" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="spinBtn">Girar</button>
+        <button id="resetBtn" class="secondary">Reset</button>
+      </div>
+    </div>
+
+    <div class="modal" id="modal">
+      <div class="modal-card">
+        <h2 id="modalTitle">¡Felicidades!</h2>
+        <div class="prize-box" id="prizeBox">Premio</div>
+        <button id="okBtn">Aceptar</button>
+      </div>
+    </div>
+
+    <!-- Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- JS -->
+    <script src="script.js"></script>
+
+    <!-- Snow -->
+    <div id="snow"></div>
+  </body>
+</html>
