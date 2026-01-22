@@ -12,7 +12,7 @@ const premios = [
   { nombre: 'Ganaste un Exhibidor de Aritos', peso: 20, real: true },
   { nombre: 'Ganaste una Pana Organizadora', peso: 10, real: true },
   { nombre: 'Ganaste una Ristra de cristal de forma', peso: 20, real: true },
-  { nombre: 'Gracias por participar', peso: 20, real: false },
+  { nombre: '1 Par de aretes', peso: 20, real: true },
 ]
 
 let spinning = false
@@ -94,7 +94,7 @@ resetBtn.onclick = () => {
 
   // Resetear transform de TODAS las cartas
   cards.forEach(
-    (c) => (c.querySelector('.card-inner').style.transform = 'rotateY(0deg)')
+    (c) => (c.querySelector('.card-inner').style.transform = 'rotateY(0deg)'),
   )
 
   spinBtn.disabled = false
@@ -132,7 +132,7 @@ function startSnow() {
   setInterval(() => {
     const flake = document.createElement('span')
     flake.classList.add('snowflake')
-    flake.textContent = '❄︎'
+    flake.textContent = '♥'
     flake.style.left = Math.random() * 150 + 'vw'
     flake.style.fontSize = 10 + Math.random() * 20 + 'px'
     flake.style.animationDuration = 10 + Math.random() * 5 + 's'
