@@ -1,6 +1,6 @@
 :root {
-  --bg: rgb(255, 210, 253);
-  --card-front: #fcceff;
+  --bg: rgb(255, 255, 255);
+  --card-front: #fce9ea;
   --card-back: #f6d8d6;
   --muted: #94a3b8;
 }
@@ -11,7 +11,7 @@
 
 body {
   font-family: Inter, system-ui, Arial;
-  background: rgb(255, 232, 250);
+  background: rgb(255, 255, 255);
   color: #240012;
   min-height: 100vh;
   display: flex;
